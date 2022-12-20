@@ -91,25 +91,26 @@
         }
         check()
     }
-    function check () {
-        console.log('count1',count1)
-        console.log('count2',count2)
-        console.log('count3',count3)
-        console.log('count4',count4)
-        console.log('count5',count5)
 
-        if (count1==count2&&count2==count3&&count3==count4&&count4==count5)
-        {
+    function check() {
+        console.log('count1', count1)
+        console.log('count2', count2)
+        console.log('count3', count3)
+        console.log('count4', count4)
+        console.log('count5', count5)
+
+        if (count1 == count2 && count2 == count3 && count3 == count4 && count4 == count5) {
             document.getElementById('hang1').style.boxShadow = "10px  10px 10px 10px red"
             document.getElementById('hang2').style.boxShadow = "10px  10px 10px 10px red"
             document.getElementById('hang3').style.boxShadow = "10px  10px 10px 10px red"
-            document.getElementById('hang4').style.boxShadow= "10px  10px 10px 10px red"
-            document.getElementById('hang5').style.boxShadow= "10px  10px 10px 10px red"
-        }else {   document.getElementById('hang1').style.boxShadow = "10px  10px 10px 10px blue"
+            document.getElementById('hang4').style.boxShadow = "10px  10px 10px 10px red"
+            document.getElementById('hang5').style.boxShadow = "10px  10px 10px 10px red"
+        } else {
+            document.getElementById('hang1').style.boxShadow = "10px  10px 10px 10px blue"
             document.getElementById('hang2').style.boxShadow = "10px  10px 10px 10px green"
             document.getElementById('hang3').style.boxShadow = "10px  10px 10px 10px gold"
-            document.getElementById('hang4').style.boxShadow= "10px  10px 10px 10px darkgreen"
-            document.getElementById('hang5').style.boxShadow= "10px  10px 10px 10px dodgerblue"
+            document.getElementById('hang4').style.boxShadow = "10px  10px 10px 10px darkgreen"
+            document.getElementById('hang5').style.boxShadow = "10px  10px 10px 10px dodgerblue"
 
         }
     }

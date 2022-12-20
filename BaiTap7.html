@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input min="0" max="5" id="Re" type="range" onclick="changeRe()" value="0"> <br>
+<input min="0" max="5" id="Fat" type="range" onclick="changeNhanh()" value="0"> <br>
+<input min="0" max="5" id="Tot" type="range" onclick="changeTot() " value="0"><br>
+<script>
+    let re = false;
+    let nha = false;
+    let tot = false;
+
+    function changeRe() {
+        re = !re
+        if (re) {
+            document.getElementById('Re').value = 5
+            if (nha && tot) {
+                document.getElementById('Fat').value = 0
+                nha = !nha
+            }
+        } else {
+            document.getElementById('Re').value = 0
+        }
+    }
+
+    function changeNhanh() {
+        nha = !nha
+        if (nha) {
+            document.getElementById('Fat').value = 5
+            if (re && tot) {
+                document.getElementById('Tot').value = 0
+                tot=!tot
+            }
+        } else {
+            document.getElementById('Fat').value = 0
+        }
+    }
+
+    function changeTot() {
+        tot = !tot
+        if (tot) {
+            document.getElementById('Tot').value = 5
+            if (re && nha) {
+                document.getElementById('Re').value = 0
+                re = !re
+            }
+        } else {
+            document.getElementById('Tot').value = 0
+
+        }
+    }
+
+
+</script>
+</body>
+</html>
