@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="cssBai4.css">
+
+</head>
+<body>
+
+<input type="button" id="manHinh">
+<br>
+<br>
+<button onclick="ketQua('1')">1</button>
+<button onclick="ketQua('2')">2</button>
+<button onclick="ketQua('3')">3</button>
+<button onclick="ketQua('+')">+</button>
+<button onclick="canBac2()">√</button>
+<br>
+<button onclick="ketQua('4')">4</button>
+<button onclick="ketQua('5')">5</button>
+<button onclick="ketQua('6')">6</button>
+<button onclick="ketQua('-')">-</button>
+<button onclick="binhPhuong()">BP</button>
+<br>
+<button onclick="ketQua('7')">7</button>
+<button onclick="ketQua('8')">8</button>
+<button onclick="ketQua('9')">9</button>
+<button onclick="ketQua('*')">*</button>
+<button onclick="">null</button>
+<br>
+<button onclick="ketQua('0')">0</button>
+<button onclick="clearScreen()">C</button>
+<button style=" background-color: red" onclick="tinhKetQua()"> =</button>
+<button onclick="ketQua('/')">/</button>
+<button onclick="">null</button>
+
+
+
+<script>
+    function ketQua(input) {
+        document.getElementById('manHinh').value += input;
+    }
+
+    function tinhKetQua() {
+        let input = document.getElementById('manHinh').value;
+        let result = eval(input);
+        document.getElementById('manHinh').value = result;
+    }
+
+    function clearScreen() {
+        document.getElementById('manHinh').value = ""
+    }
+
+    function canBac2() {
+       let input = document.getElementById('manHinh').value;
+       let result = Math.sqrt(input);
+       document.getElementById('manHinh').value = result;
+    }
+    function binhPhuong(){
+        let input =document.getElementById('manHinh').value;
+        let result = Math.pow (2,input)
+        document.getElementById('manHinh').value=result;
+    }
+</script>
+</body>
+</html>

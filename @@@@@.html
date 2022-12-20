@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        .puzzle-img {
+            display: block;
+            height: 100px;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        #box-shadow {
+            width: 500px;
+            border: 1px solid;
+            padding: 10px;
+            box-shadow: 5px 10px 18px red;
+        }
+    </style>
+</head>
+<body>
+<div id="box-shadow">
+    <img src="./Cat 1.png" class="puzzle-img" id="img1" onclick="changeImg1()" alt=""/>
+    <img src="./Gau 2.png" class="puzzle-img" id="img2" onclick="changeImg2()" alt=""/>
+    <img src="./Khi 3.png" class="puzzle-img" id="img3" onclick="changeImg3()" alt=""/>
+</div>
+<script>
+    let count1 = 0,
+        count2 = 1,
+        count3 = 2;
+    let img1 = document.getElementById("img1");
+    let img2 = document.getElementById("img2");
+    let img3 = document.getElementById("img3");
+
+    function changeImg1() {
+        count1++;
+        switch (count1) {
+            case 1:
+                img1.src = `./Gau 1.png`;
+                break;
+            case 2:
+                img1.src = `./Khi 1.png`;
+                break;
+            case 3:
+                count1 = 0;
+                img1.src = `./Cat 1.png`;
+
+                break;
+        }
+        checkComplete();
+    }
+
+    function changeImg2() {
+        count2++;
+        switch (count2) {
+            case 1:
+                img2.src = `./Gau 2.png`;
+                break;
+            case 2:
+                img2.src = `./Khi 2.png`;
+                break;
+            case 3:
+                count2 = 0;
+                img2.src = `./Cat 2.png`;
+                break;
+        }
+        checkComplete();
+    }
+
+    function changeImg3() {
+        console.log(count3);
+        count3++;
+        switch (count3) {
+            case 1:
+                img3.src = `./Gau 3.png`;
+                break;
+            case 2:
+                img3.src = `./Khi 3.png`;
+                break;
+            case 3:
+                count3 = 0;
+                img3.src = `./Cat 3.png`;
+                break;
+        }
+        checkComplete();
+    }
+
+    function checkComplete() {
+        console.log(count1, count2, count3);
+        if (count1 == count2 && count2 == count3) {
+            document.getElementById("box-shadow").style.boxShadow = "5px 10px 18px blue"
+        } else {
+            document.getElementById("box-shadow").style.boxShadow = "5px 10px 18px red"
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <style>-->
+    <!--        .gau {-->
+    <!--            box-shadow: red 4px 4px 9px;-->
+    <!--        }-->
+    <!--    </style>-->
+</head>
+<body>
+<img id="anh1" src='image/Gau 1.jpg' height="100" width="600" onclick="changeImage1()"/><br>
+<img id="anh2" src='image/Cat 2.jpg' height="79" width="600" onclick="changeImage2()"/><br>
+<img id="anh3" src='image/Khi 3.jpg' height="79" width="600" onclick="changeImage3()"/>
+</body>
+<script>
+    let count1 = 0;
+    let count2 = 1;
+    let count3 = 2;
+    let img1 = document.getElementById('anh1');
+    let img2 = document.getElementById('anh2');
+    let img3 = document.getElementById('anh3');
+
+    function changeImage1() {
+        count1++;
+        if (count1 == 1) {
+            img1.src = 'image/Cat 1.jpg';
+        } else if (count1 == 2) {
+            img1.src = 'image/Khi 1.jpg';
+        } else {
+            count1 = 0;
+            img1.src = 'image/Gau 1.jpg'
+        }
+        console.log('count1 trong ham 1 -- ', count1)
+        checkShadow()
+    }
+
+    function changeImage2() {
+
+        count2++;
+        if (count2 == 1) {
+            img2.src = 'image/Cat 2.jpg';
+        } else if (count2 == 2) {
+            img2.src = 'image/Khi 2.jpg';
+        } else {
+            count2 = 0;
+            img2.src = 'image/Gau 2.jpg'
+        }
+        console.log('count2 trong ham 2 -- ', count2)
+        checkShadow()
+    }
+
+    function changeImage3() {
+
+        count3++;
+        if (count3 == 1) {
+            img3.src = 'image/Cat 3.jpg';
+        } else if (count3 == 2) {
+            img3.src = 'image/Khi 3.jpg';
+        } else {
+            count3 = 0;
+            img3.src = 'image/Gau 3.jpg'
+        }
+        console.log('count3 -- ', count3)
+        checkShadow()
+    }
+
+    function checkShadow() {
+        console.log('count1 = ',count1)
+        console.log('count2 = ',count2)
+        console.log('count3 = ',count3)
+        if (count1 == count2 && count2 == count3) {
+            console.log('vao day khong')
+            img1.style.boxShadow = 'red 4px 4px 9px';
+            img2.style.boxShadow = 'red 4px 4px 9px';
+            img3.style.boxShadow = 'red 4px 4px 9px';
+        } else {
+            img1.style.boxShadow = 'blue 4px 4px 9px';
+            img2.style.boxShadow = 'blue 4px 4px 9px';
+            img3.style.boxShadow = 'blue 4px 4px 9px';
+        }
+    }
+</script>
+</html>

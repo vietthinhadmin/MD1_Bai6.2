@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<body>
+<img style="box-shadow: 10px 10px 10px 10px red" id="hang1" onclick="change1()" src="asd/meo0.jpg" height="80"
+     width="400"/><br>
+<img style="box-shadow: 10px 10px 10px 10px blue" id="hang2" onclick="change2()" src="asd/gau1.jpg" height="80"
+     width="400"/><br>
+<img style="box-shadow: 10px 10px 10px 10px gold" id="hang3" onclick="change3()" src="asd/khi2.jpg" height="80"
+     width="400"/><br>
+<img style="box-shadow: 10px 10px 10px 10px darkgreen" id="hang4" onclick="change4()" src="asd/meo3.jpg" height="80"
+     width="400"/><br>
+<img style="box-shadow: 10px 10px 10px 10px dodgerblue" id="hang5" onclick="change5()" src="asd/khi4.jpg" height="80"
+     width="400"/><br>
+<script>
+    let count1 = 0;
+    let count2 = 1;
+    let count3 = 2;
+    let count4 = 3;
+    let count5 = 4;
+    let img1 = document.getElementById('hang1')
+    let img2 = document.getElementById('hang2')
+    let img3 = document.getElementById('hang3')
+    let img4 = document.getElementById('hang4')
+    let img5 = document.getElementById('hang5')
+
+    function change1() {
+        count1++;
+        if (count1 == 1) {
+            img1.src = 'asd/gau0.jpg'
+        } else if (count1 == 2) {
+            img1.src = 'asd/khi0.jpg'
+        } else {
+            count1 = 0;
+            img1.src = 'asd/meo0.jpg'
+        }
+        check()
+    }
+
+    function change2() {
+        console.log('goi change 2')
+        count2++;
+        if (count2 == 1) {
+            img2.src = 'asd/gau1.jpg'
+        } else if (count2 == 2) {
+            img2.src = 'asd/khi1.jpg'
+        } else {
+            count2 = 0;
+            img2.src = 'asd/meo1.jpg'
+        }
+        check()
+    }
+
+    function change3() {
+        count3++;
+        if (count3 == 1) {
+            img3.src = 'asd/gau2.jpg'
+        } else if (count3 == 2) {
+            img3.src = 'asd/khi2.jpg'
+        } else {
+            count3 = 0;
+            img3.src = 'asd/meo2.jpg'
+        }
+    }
+
+    function change4() {
+        count4++;
+        if (count4 == 1) {
+            img4.src = 'asd/gau3.jpg'
+        } else if (count4 == 2) {
+            img4.src = 'asd/khi3.jpg'
+        } else {
+            count4 = 0;
+            img4.src = 'asd/meo3.jpg'
+        }
+        check()
+    }
+
+    function change5() {
+        count5++;
+        if (count5 == 1) {
+            img5.src = 'asd/gau4.jpg'
+        } else if (count5 == 2) {
+            img5.src = 'asd/khi4.jpg'
+        } else {
+            count5 = 0;
+            img5.src = 'asd/meo4.jpg'
+        }
+        check()
+    }
+    function check () {
+        console.log('count1',count1)
+        console.log('count2',count2)
+        console.log('count3',count3)
+        console.log('count4',count4)
+        console.log('count5',count5)
+
+        if (count1==count2&&count2==count3&&count3==count4&&count4==count5)
+        {
+            document.getElementById('hang1').style.boxShadow = "10px  10px 10px 10px red"
+            document.getElementById('hang2').style.boxShadow = "10px  10px 10px 10px red"
+            document.getElementById('hang3').style.boxShadow = "10px  10px 10px 10px red"
+            document.getElementById('hang4').style.boxShadow= "10px  10px 10px 10px red"
+            document.getElementById('hang5').style.boxShadow= "10px  10px 10px 10px red"
+        }else {   document.getElementById('hang1').style.boxShadow = "10px  10px 10px 10px blue"
+            document.getElementById('hang2').style.boxShadow = "10px  10px 10px 10px green"
+            document.getElementById('hang3').style.boxShadow = "10px  10px 10px 10px gold"
+            document.getElementById('hang4').style.boxShadow= "10px  10px 10px 10px darkgreen"
+            document.getElementById('hang5').style.boxShadow= "10px  10px 10px 10px dodgerblue"
+
+        }
+    }
+
+
+</script>
+</body>
+</html>
